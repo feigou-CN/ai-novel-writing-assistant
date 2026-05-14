@@ -118,9 +118,11 @@ export const handlers: Record<string, (args: Record<string, unknown>) => Promise
     const normalized = chapters
       .filter(chapter => chapter.title && chapter.title.trim())
       .map(chapter => {
-        const chapterOrder = typeof chapter.order === 'number' && Number.isFinite(chapter.order)
+          const chapterOrder = typeof chapter.order === 'number' && Number.isFinite(chapter.order)
           ? chapter.order
           : nextOrder++
+
+        const outlineStr = chapter.outline || ''
 
         return {
           id: generateId(),
@@ -128,7 +130,8 @@ export const handlers: Record<string, (args: Record<string, unknown>) => Promise
           title: chapter.title!.trim(),
           order: chapterOrder,
           content: '',
-          outline: chapter.outline || '',
+          outline: outlineStr,
+          outlineStatus: outlineStr ? 'planned' : undefined,
           createdAt: now,
           updatedAt: now,
         } satisfies Chapter

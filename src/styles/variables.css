@@ -31,6 +31,9 @@
 
   --primary: #409eff;
   --resize-handle-hover: #409eff;
+
+  --color-warning: #e6a23c;
+  --color-success: #67c23a;
 }
 
 html.dark {
@@ -66,4 +69,7 @@ html.dark {
 
   --primary: #409eff;
   --resize-handle-hover: #409eff;
+
+  --color-warning: #e6a23c;
+  --color-success: #67c23a;
 }

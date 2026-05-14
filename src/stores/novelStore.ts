@@ -65,6 +65,7 @@ export const useNovelStore = defineStore('novel', () => {
       deleteByIndex('chatMessages', 'novelId', id),
       deleteByIndex('timelineTracks', 'novelId', id),
       deleteByIndex('timelineEvents', 'novelId', id),
+      deleteByIndex('characterRelations', 'novelId', id),
     ])
     // outlines keyed by novelId, novelMemory keyed by novelId
     await del('outlines', id)

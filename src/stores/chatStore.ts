@@ -44,6 +44,7 @@ export const useChatStore = defineStore('chat', () => {
 
   async function loadMessages(nId: string) {
     novelId.value = nId
+    allowDestructiveWithoutAsking.value = false
     messages.value = await getAllByIndex<ChatMessage>('chatMessages', 'novelId', nId)
     messages.value.sort((a, b) => a.createdAt - b.createdAt)
     status.value = 'idle'

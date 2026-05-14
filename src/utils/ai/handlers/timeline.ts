@@ -17,6 +17,7 @@ export const timelineHandlers: Record<string, (args: Record<string, unknown>) =>
         trackId: track.id,
         trackName: track.name,
         events: trackEvents.map(e => ({
+          id: (e as any).id,
           name: e.name,
           description: e.description,
           order: e.order,

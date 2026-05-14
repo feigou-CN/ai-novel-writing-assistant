@@ -56,8 +56,8 @@ export const handlers: Record<string, (args: Record<string, unknown>) => Promise
     return JSON.stringify({
       action: 'update_character',
       entityId: id,
-      entityName: existing.name,
-      summary: `已更新角色「${existing.name}」的信息。`,
+      entityName: updated.name,
+      summary: `已更新角色「${updated.name}」的信息。`,
     })
   },
 
